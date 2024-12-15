@@ -30,3 +30,43 @@ siteCinema/
 ├── package.json               # Configuração do projeto e dependências
 ├── package-lock.json          # Detalhamento das dependências instaladas
 
+## Descrição do Caso de Uso
+
+O caso de uso simula o administrador de um site de cinema realizando as seguintes tarefas:
+
+1. **Adicionar um Filme**  
+   Acessando a página `adm_addDados.html`, o administrador pode preencher um formulário para adicionar novos filmes à base de dados, incluindo informações como título, descrição e imagem (a ser carregada da pasta `uploads`).
+
+2. **Atualizar um Filme**  
+   Na página `adm_attDados.html`, o administrador pode modificar os dados de um filme já existente na base.
+
+3. **Logout e Visualização de Filmes**  
+   Após as alterações, ao realizar o logout, o administrador pode verificar os filmes adicionados ou atualizados na aba de filmes exibida ao público geral (`filmes.html`).
+
+---
+
+## Como Executar o Projeto
+
+### Pré-requisitos
+
+- **Node.js** instalado no sistema.  
+  Caso não tenha o Node.js instalado, siga as instruções de instalação neste [link](https://nodejs.org/en).
+
+- **MongoDB** instalado e em execução no sistema.
+
+---
+
+### Passo a Passo
+
+1. **Baixar e Extrair o Repositório**  
+   Faça o download ou clone o repositório e extraia os arquivos.
+
+2. **Abrir o Diretório no Terminal**  
+   Navegue até a pasta do projeto (`siteCinema`) usando o terminal.
+
+3. **Instalar as Dependências**  
+   Execute o comando:
+   ```bash
+   npm install
+
+
