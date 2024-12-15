@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Adicionar Dados</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #111;
+            color: #fff;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #222;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        nav {
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+            padding: 8px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #e50914;
+        }
+
+        .logout-button {
+            background-color: #e50914;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            text-decoration: none;
+        }
+
+        .logout-button:hover {
+            background-color: #b20710;
+        }
+        .filme-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .filme-card {
+            background-color: #222;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        .filme-card label {
+            font-weight: bold;
+        }
+
+        .filme-card input,
+        .filme-card textarea {
+            margin-bottom: 10px;
+            width: 100%;
+        }
+
+
+        .container {
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .section h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            border-bottom: 2px solid #e50914;
+            padding-bottom: 5px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #333;
+            color: #fff;
+            font-size: 16px;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            background-color: #444;
+        }
+
+        .save-button {
+            background-color: #e50914;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .save-button:hover {
+            background-color: #b20710;
+        }
+
+        #funcao_pagina{
+            font-weight: bolder;
+            color: yellow;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #222;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">Cinema Genérico - Administrador: <span id="funcao_pagina">Adicionar Dados</span></div>
+        <nav>
+            <a href="adm_addDados.html">Adicionar Dados</a> <!-- Página atual -->
+            <a href="adm_attDados.html">Atualizar Dados</a> <!-- Novo link -->
+            <a href="login.html" class="logout-button">Logout</a>
+        </nav>
+    </header>
+    
+
+    <div class="container">
+        <div class="section">
+            <h2>Filmes por Sala</h2>
+            <div class="filme-container">
+                <div class="filme-card">
+                    <label for="movie-sala-01">Sala 01</label>
+                    <input type="text" name="title-movie-01" placeholder="Nome do Filme">
+                    <textarea name="sin-film-01" rows="3" placeholder="Sinopse do Filme"></textarea>
+                    <input type="file" name="movie-image-01" accept="image/*">
+                    <input type="number" name="ticket-movie-01" placeholder="Preço TOTAL do Ingresso">
+                </div>
+                <div class="filme-card">
+                    <label for="movie-sala-02">Sala 02</label>
+                    <input type="text" name="title-movie-02" placeholder="Nome do Filme">
+                    <textarea name="sin-film-02" rows="3" placeholder="Sinopse do Filme"></textarea>
+                    <input type="file" name="movie-image-02" accept="image/*">
+                    <input type="number" name="ticket-movie-02" placeholder="Preço TOTAL do Ingresso">
+                </div>
+                <div class="filme-card">
+                    <label for="movie-sala-03">Sala 03</label>
+                    <input type="text" name="title-movie-03" placeholder="Nome do Filme">
+                    <textarea name="sin-film-03" rows="3" placeholder="Sinopse do Filme"></textarea>
+                    <input type="file" name="movie-image-03" accept="image/*">
+                    <input type="number" name="ticket-movie-03" placeholder="Preço TOTAL do Ingresso">
+                </div>
+                <div class="filme-card">
+                    <label for="movie-sala-04">Sala 04</label>
+                    <input type="text" name="title-movie-04" placeholder="Nome do Filme">
+                    <textarea name="sin-film-04" rows="3" placeholder="Sinopse do Filme"></textarea>
+                    <input type="file" name="movie-image-04" accept="image/*">
+                    <input type="number" name="ticket-movie-04" placeholder="Preço TOTAL do Ingresso">
+                </div>
+            </div>
+            <button type="button" id="saveMoviesButton" class="save-button">Salvar Filmes</button>
+        </div>
+        
+    </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Cinema Genérico. Todos os direitos reservados.</p>
+    </footer>
+</body>
+
+</html>
+
+<script src="./js/adm_addDados.js"></script>
