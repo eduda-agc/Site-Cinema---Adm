@@ -75,4 +75,44 @@ O caso de uso simula o administrador de um site de cinema realizando as seguinte
    node index.js
    ```
 
+5. **Acessar a Aplicação**  
+   Abra o arquivo `index.html` em seu navegador para acessar o site.
 
+---
+
+## Login de Administrador
+
+Para acessar as funcionalidades administrativas do site, utilize as credenciais padrão:
+
+- **Usuário**: `admin`  
+- **Senha**: `admin123`
+
+---
+
+## Testando a Aplicação
+
+1. **Adicionar Filmes**  
+   - Acesse a página `adm_addDados.html`.  
+   - Preencha os campos do formulário com as informações do filme.  
+   - **Nota**: Para adicionar imagens, elas devem estar previamente carregadas na pasta `uploads`. Algumas imagens já estão disponíveis para teste.
+
+2. **Atualizar Filmes**  
+   - Acesse a página `adm_attDados.html`.  
+   - Modifique as informações dos filmes adicionados anteriormente.
+
+3. **Logout e Verificação**  
+   - Faça logout e acesse a aba `filmes.html` para visualizar os filmes adicionados ou atualizados.
+
+---
+
+## Dependências Utilizadas
+
+As principais dependências do projeto incluem:
+
+- **Node.js**: Para gerenciamento do servidor e integração com o MongoDB.
+- **Express.js**: Para criar rotas e gerenciar requisições.
+- **Mongoose**: Para modelagem dos dados no MongoDB.
+
+Para mais detalhes, consulte o arquivo `package.json`.
+
+---
