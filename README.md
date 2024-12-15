@@ -29,7 +29,7 @@ siteCinema/
 ├── index.js                   # Servidor base (Node.js) e integração com MongoDB
 ├── package.json               # Configuração do projeto e dependências
 ├── package-lock.json          # Detalhamento das dependências instaladas
-
+```
 ## Descrição do Caso de Uso
 
 O caso de uso simula o administrador de um site de cinema realizando as seguintes tarefas:
