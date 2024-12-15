@@ -68,5 +68,11 @@ O caso de uso simula o administrador de um site de cinema realizando as seguinte
    Execute o comando:
    ```bash
    npm install
+   ```
+4. **Inicializar o Servidor**  
+   Inicie o servidor com o comando:
+   ```bash
+   node index.js
+   ```
 
 
