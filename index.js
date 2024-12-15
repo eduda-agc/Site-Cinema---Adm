@@ -110,11 +110,12 @@ app.post('/movies', async (req, res) => {
 // Obter todos os filmes
 app.get('/movies', async (req, res) => {
   try {
-    const movies = await Movie.find().exec();
-    res.status(200).json(movies);
+      const movies = await Movie.find().exec();
+      console.log("Retornando filmes:", movies); // Para depuração
+      res.status(200).json(movies);
   } catch (error) {
-    console.error('Erro ao listar filmes:', error);
-    res.status(500).json({ message: 'Erro ao listar filmes.' });
+      console.error('Erro ao listar filmes:', error);
+      res.status(500).json({ message: 'Erro ao listar filmes.' });
   }
 });
 

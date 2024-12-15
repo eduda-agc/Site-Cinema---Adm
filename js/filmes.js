@@ -1,44 +1,30 @@
-document.addEventListener('DOMContentLoaded', () => {
-    loadMovies(); // Carregar filmes da base de dados
-});
-
-// Função para carregar os filmes
-async function loadMovies() {
+async function carregarFilmes() {
+    const container = document.getElementById('filmeContainer');
     try {
-        const response = await fetch('/movies-list'); 
-        if (!response.ok) throw new Error('Erro ao carregar os filmes.');
+        const response = await fetch('http://localhost:3000/movies');
+        if (!response.ok) throw new Error('Erro ao carregar filmes');
+        
+        const filmes = await response.json();
+        console.log("Filmes recebidos:", filmes); // Verificar JSON recebido
 
-        const movies = await response.json();
+        filmes.forEach(filme => {
+            const card = document.createElement('div');
+            card.className = 'filme-card';
 
-        const filmeContainer = document.getElementById('filmeContainer');
-        filmeContainer.innerHTML = ''; // Limpar conteúdo anterior
-
-        // Exibir os filmes disponíveis
-        if (movies.length === 0) {
-            filmeContainer.innerHTML = '<p>Nenhum filme disponível no momento.</p>';
-            return;
-        }
-
-        movies.forEach(movie => {
-            const filmeCard = document.createElement('div');
-            filmeCard.classList.add('filme-card');
-            filmeCard.innerHTML = `
-                <h3>${movie.name}</h3>
-                <img src="${movie.image}" alt="${movie.name}" style="width: 100%; border-radius: 10px; margin-bottom: 10px;">
-                <p><strong>Sinopse:</strong> ${movie.synopsis}</p>
-                <p><strong>Preço:</strong> ${movie.ticketPrice}</p>
-                <button onclick="buyTicket('${movie._id}')">Comprar Ingresso</button>
+            card.innerHTML = `
+                <h3>${filme.name}</h3>
+                <p>${filme.synopsis}</p>
+                <p><strong>Sala:</strong> ${filme.room}</p>
+                <p><strong>Preço:</strong> R$${filme.ticketPrice}</p>
+                <img src="${filme.image}" alt="${filme.name}" style="width:100%; border-radius: 5px; margin-top: 10px;">
+                <button>Assistir</button>
             `;
-            filmeContainer.appendChild(filmeCard);
+
+            container.appendChild(card);
         });
     } catch (error) {
-        console.error(error);
-        const filmeContainer = document.getElementById('filmeContainer');
-        filmeContainer.innerHTML = '<p>Erro ao carregar os filmes. Tente novamente mais tarde.</p>';
+        console.error('Erro ao carregar filmes:', error);
     }
 }
 
-// Função para comprar ingresso (em desenvolvimento)
-function buyTicket(movieId) {
-    alert(`Funcionalidade para comprar ingresso do filme ${movieId} em desenvolvimento.`);
-}
+document.addEventListener('DOMContentLoaded', carregarFilmes);
